@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const allData = require("./csvjson.json")
 
 // initialize app
 const app = express();
@@ -19,7 +20,7 @@ app.listen(process.env.PORT, () => {
 
 const getCarInventoryWithFilters = async (req, res) => {
   try {
-    const allInventoryCars = {}
+    const allInventoryCars = allData
 
     let obj = {
       data: allInventoryCars,
